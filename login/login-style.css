@@ -40,10 +40,6 @@ body {
   border: 2px solid #b60000;
 }
 
-.nav-links a {
-  text-decoration: none;
-}
-
 .nav-links li {
   display: inline-block;
   padding-left: 1rem;
