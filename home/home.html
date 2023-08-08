@@ -15,20 +15,81 @@
   <body>
     <div class="header">
       <div class="logo">
-        <a href="../home/home.html"><img src="../resources/logo-fornax-png.png" /> </a>
+        <a href="../home/home.html"
+          ><img src="../resources/logo-fornax-png.png" />
+        </a>
       </div>
       <nav class="menu">
-        <ul class="nav-links">
-          <li><a href="../login/login.html">CHOFER</a></li>
-          <li>|</li>
-          <li><a href="../login/login.html">ADMIN</a></li>
-        </ul>
+        <div class="nav-links">
+          <a href="../login/login.html">CHOFER</a>
+          <a href="../login/login.html">ADMIN</a>
+        </div>
       </nav>
     </div>
     <div class="container">
+      <h2>Servicio de Post-Venta y Garantías</h2>
+      <form class="formulario">
+        <div class="columna-1">
+          <div class="linea">
+            <p>Nombre y Apellido<span> *</span></p>
+            <input type="text" />
+          </div>
+          <div class="linea">
+            <p>Domicilio<span> *</span></p>
+            <input type="text" />
+          </div>
+          <div class="linea">
+            <p>Teléfono<span> *</span></p>
+            <input type="number" />
+          </div>
+          <div class="linea">
+            <p>Email</p>
+            <input type="email" />
+          </div>
+          <div class="linea">
+            <p>Provincia<span> *</span></p>
+            <select id="provincias"></select>
+          </div>
+          <div class="linea">
+            <p>Localidad<span> *</span></p>
+            <input type="text" />
+          </div>
+          <div class="linea">
+            <p>Código postal<span> *</span></p>
+            <input type="text" />
+          </div>
+        </div>
+        <div class="columna2">
+          <div class="linea">
+            <p>Piso/Departamento</p>
+            <input type="text" />
+          </div>
+          <div class="linea">
+            <p>Modelo de artefacto<span> *</span></p>
+            <input type="text" />
+          </div>
+          <div class="linea">
+            <p>Número de serie<span> *</span></p>
+            <input type="text" />
+          </div>
+          <div class="linea">
+            <p>¿Está en garantía?<span> *</span></p>
+            <input type="checkbox" id="checkbox" />
+          </div>
+          <div class="linea">
+            <p>Problema que presenta el producto</p>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+          </div>
+          <div class="linea">
+            <p>Archivos</p>
+            <input id="arch" type="file" multiple />
+          </div>
+        </div>
+      </form>
+      <button type="submit">ENVIAR</button>
     </div>
     <div class="footer">
-      <div class="redes">
+      <div class="redes item-ft">
         <a href="https://www.instagram.com/fornax.cocinas/" target="_blank"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -89,12 +150,13 @@
             ></path></svg
         ></a>
       </div>
-      <div>
+      <div class="direccion item-ft">
         <p>Rueda 1540 - Rosario - Argentina</p>
       </div>
-      <div>
+      <div class="item-ft">
         <p>cocinas@fornax.com.ar</p>
       </div>
     </div>
+    <script src="../home/script.js"></script>
   </body>
 </html>
