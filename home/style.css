@@ -163,7 +163,7 @@ textarea {
   max-height: 7.5rem;
   resize: none;
   background: lightgray;
-  border: 1px solid black;
+  border: none;
   border-radius: 2px;
   padding: 1rem;
   font-size: 16px;
@@ -173,7 +173,7 @@ input {
   width: 70%;
   height: 2.3rem;
   background: lightgray;
-  border: 1px solid black;
+  border: none;
   border-radius: 2px;
   padding: 1rem;
   font-size: 16px;
@@ -183,15 +183,16 @@ button {
   height: 4rem;
   width: 10rem;
   font-size: 20px;
-  background-color: transparent;
-  border: 1px solid #cdc5c5;
+  border: none;
   border-radius: 5px;
   transition: all 0.1s;
+  background-color: lightgray;
 }
 
 button:hover {
   transform: scale(1.1);
-  background-color: lightgray;
+  background-color: rgb(186, 39, 39);
+  border: 1px solid lightgray;
 }
 
 select {
