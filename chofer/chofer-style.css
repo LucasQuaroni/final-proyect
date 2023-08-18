@@ -79,32 +79,6 @@ body {
   color: grey;
 }
 
-.title {
-  font-size: 4rem;
-}
-
-.button-container {
-  display: flex;
-  gap: 20px;
-}
-
-.button {
-  padding: 10px 20px;
-  text-decoration: none;
-  color: black;
-  background-color: lightgray;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.2s;
-  width: 18rem;
-  text-align: center;
-}
-
-.button:hover {
-  background-color: rgb(186, 39, 39);
-}
-
 .footer {
   width: 100%;
   padding: 1.2rem 8%;
@@ -161,11 +135,6 @@ body {
 
   .container {
   padding-bottom: 0;
-  }
-
-  .button-container {
-    display: flex;
-    flex-direction: column;
   }
 
   .redes {
