@@ -28,17 +28,17 @@
     <div class="container">
       <div class="card">
         <h1>Funcionalidades restringidas</h1>
-        <div class="login">
+        <form name="myForm" class="login" action="autenticarLogin.php" onsubmit="return validacion()" method="POST">
           <div class="linea">
             <p>Usuario</p>
-            <input type="text" id="user" />
+            <input type="text" id="user" name="user"/>
           </div>
           <div class="linea">
             <p>Contraseña</p>
-            <input type="password" id="pass" />
+            <input type="password" id="pass" name="pass"/>
           </div>
-        </div>
-        <button type="submit">INGRESAR</button>
+          <input type="submit"></input>
+        </form>
       </div>
     </div>
     <div class="footer">
