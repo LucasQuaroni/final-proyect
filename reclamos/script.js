@@ -1,3 +1,14 @@
+function mostrarFormularioRegistroCliente() {
+  var formularioRegistroCliente = document.getElementById(
+    "formularioRegistroCliente"
+  );
+  var btnValidarCliente = document.getElementById("btnValidarCliente");
+
+  // Oculta el botón "Validar Cliente" y muestra el formulario de registro
+  btnValidarCliente.style.display = "none";
+  formularioRegistroCliente.style.display = "block";
+}
+
 const prov = [
   "Buenos Aires",
   "Catamarca",
@@ -31,4 +42,3 @@ prov.forEach((provincia) => {
   option.textContent = provincia;
   selectProv.appendChild(option);
 });
-

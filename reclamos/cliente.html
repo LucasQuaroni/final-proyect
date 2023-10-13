@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Servicio de PostVenta - FORNAX S.R.L</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Registro de reclamo ONLINE</title>
+    <link rel="stylesheet" href="estilos.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,12 +12,13 @@
       rel="stylesheet"
     />
   </head>
+
   <body>
     <div class="header">
       <div class="logo">
         <a href="../index.html"
-          ><img src="../resources/logo-fornax-png.png" />
-        </a>
+          ><img src="../resources/logo-fornax-png.png"
+        /></a>
       </div>
       <nav class="menu">
         <div class="nav-links">
@@ -26,67 +27,18 @@
       </nav>
     </div>
     <div class="container">
-      <h2>Realice su reclamo</h2>
-      <form class="formulario">
-        <div class="columna-1">
-          <div class="linea">
-            <p>Nombre y Apellido<span> *</span></p>
-            <input type="text" />
-          </div>
-          <div class="linea">
-            <p>Domicilio<span> *</span></p>
-            <input type="text" />
-          </div>
-          <div class="linea">
-            <p>Teléfono<span> *</span></p>
-            <input type="number" />
-          </div>
-          <div class="linea">
-            <p>Email</p>
-            <input type="email" />
-          </div>
-          <div class="linea">
-            <p>Provincia<span> *</span></p>
-            <select id="provincias"></select>
-          </div>
-          <div class="linea">
-            <p>Localidad<span> *</span></p>
-            <input type="text" />
-          </div>
-          <div class="linea">
-            <p>Código postal<span> *</span></p>
-            <input type="text" />
-          </div>
+      <h2>Validación del Cliente</h2>
+      <form method="post" action="procesar_validacion.php">
+        <div class="linea">
+          <p>Número de DNI<span> *</span></p>
+          <input type="number" name="dni_cliente" required />
         </div>
-        <div class="columna2">
-          <div class="linea">
-            <p>Piso/Departamento</p>
-            <input type="text" />
-          </div>
-          <div class="linea">
-            <p>Modelo de artefacto<span> *</span></p>
-            <input type="text" />
-          </div>
-          <div class="linea">
-            <p>Número de serie<span> *</span></p>
-            <input type="text" />
-          </div>
-          <div class="linea">
-            <p>¿Está en garantía?<span> *</span></p>
-            <input type="checkbox" id="checkbox" />
-          </div>
-          <div class="linea">
-            <p>Problema que presenta el producto</p>
-            <textarea name="" id="" cols="30" rows="10"></textarea>
-          </div>
-          <div class="linea">
-            <p>Archivos</p>
-            <input id="arch" type="file" multiple />
-          </div>
+        <div class="linea">
+          <button type="submit" name="submit">Validar Cliente</button>
         </div>
       </form>
-      <button type="submit">ENVIAR</button>
     </div>
+
     <div class="footer">
       <div class="redes item-ft">
         <a href="https://www.instagram.com/fornax.cocinas/" target="_blank"
@@ -156,6 +108,6 @@
         <p>cocinas@fornax.com.ar</p>
       </div>
     </div>
-    <script src="../home/script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
