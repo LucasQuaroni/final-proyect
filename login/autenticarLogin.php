@@ -15,26 +15,31 @@ if ($usuario != "" && $contra != "") {
         $resultado_rol = mysqli_query($conexion, $consulta_rol);
         $rol = mysqli_fetch_assoc($resultado_rol)['rol'];
 
-        // Inicia la sesión y establece la variable de sesión
-        $_SESSION['usuario'] = $usuario;
-        $_SESSION['rol'] = $rol;
-
         if ($rol == 'A') {
+            $_SESSION['usuario'] = $usuario;
             header("Location: ../admin/admin.php");
             exit;
         } elseif ($rol == 'C') {
+            $_SESSION['usuario'] = $usuario;
             header("Location: ../chofer/chofer.php");
             exit;
         } elseif ($rol == 'T') {
+            $_SESSION['usuario'] = $usuario;
             header("Location: ../tecnico/tecnico.php");
             exit;
         } else {
-            echo "Error en la autenticación";
+            $_SESSION['error_message'] = "Error en la autenticación. Rol desconocido";
+            header("Location: ../login/login.php");
+            exit;
         }
     } else {
-        echo "Error en la autenticación";
+        $_SESSION['error_message'] = "Error en la autenticación. Usuario o contraseña incorrectos";
+        header("Location: ../login/login.php");
+        exit;
     }
 } else {
-    echo "Los campos de Usuario y Contraseña no pueden estar vacíos";
+    $_SESSION['error_message'] = "Los campos de Usuario y Contraseña no pueden estar vacíos";
+    header("Location: ../login/login.php");
+    exit;
 }
 ?>

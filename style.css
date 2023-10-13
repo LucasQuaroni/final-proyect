@@ -63,6 +63,16 @@ body {
   width: 16rem;
 }
 
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+.info p {
+  font-size: 3rem;
+}
 .container {
   display: flex;
   align-items: center;

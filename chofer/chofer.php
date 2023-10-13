@@ -3,7 +3,7 @@ session_start();
 
 // Verificar si el usuario ha iniciado sesión
 if (!isset($_SESSION['usuario'])) {
-  header("Location: ../login/login.html");
+  header("Location: ../login/login.php");
   exit;
 }
 ?>
@@ -35,7 +35,7 @@ if (!isset($_SESSION['usuario'])) {
       </nav>
     </div>
     <div class="container">
-      <p class="desc">Login / Chofer</p>
+      <p class="desc">ORDENES DE FLETE</p>
     </div>
     <script src="chofer-script.js"></script>
   </body>
