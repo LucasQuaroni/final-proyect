@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-10-2023 a las 23:10:17
+-- Tiempo de generación: 14-10-2023 a las 17:57:17
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 8.1.10
 
@@ -33,6 +33,15 @@ CREATE TABLE `artefactos` (
   `garantia` enum('S','N') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `artefactos`
+--
+
+INSERT INTO `artefactos` (`serial`, `modelo`, `garantia`) VALUES
+('12321', NULL, NULL),
+('12989898', 'FORNAX FIT 50', 'S'),
+('23132132131', 'FORNAX FIT 50', 'S');
+
 -- --------------------------------------------------------
 
 --
@@ -50,6 +59,13 @@ CREATE TABLE `clientes` (
   `codpostal` varchar(15) NOT NULL,
   `obs` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `clientes`
+--
+
+INSERT INTO `clientes` (`dni`, `nombreYapellido`, `domicilio`, `telefono`, `email`, `provincia`, `localidad`, `codpostal`, `obs`) VALUES
+('44765283', 'Lucas Quaroni', 'Alvear 12', '3416956364', 'lucas.quaroni@gmail.com', 'Santa Fe', 'Rosario', '2000', 'Nada que observar');
 
 -- --------------------------------------------------------
 
@@ -90,11 +106,31 @@ CREATE TABLE `reclamos` (
   `dni` varchar(8) NOT NULL,
   `fecha` date NOT NULL,
   `serial` varchar(15) NOT NULL,
-  `idadmin` int(11) NOT NULL,
+  `idadmin` int(11) DEFAULT NULL,
   `descripcion` varchar(100) NOT NULL,
-  `adjuntos` varchar(1000) DEFAULT NULL,
   `idestado` varchar(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `reclamos`
+--
+
+INSERT INTO `reclamos` (`id`, `dni`, `fecha`, `serial`, `idadmin`, `descripcion`, `idestado`) VALUES
+(5, '44765283', '2023-10-14', '23132132131', NULL, 'prueba', NULL),
+(6, '44765283', '2023-10-14', '12989898', NULL, 'prueba', NULL),
+(7, '44765283', '2023-10-14', '12989898', NULL, 'prueba', NULL),
+(8, '44765283', '2023-10-14', '12989898', NULL, 'prueba', NULL),
+(9, '44765283', '2023-10-14', '12989898', NULL, 'prueba', NULL),
+(10, '44765283', '2023-10-14', '12989898', NULL, 'prueba dos', NULL),
+(11, '44765283', '2023-10-14', '12989898', NULL, 'prueba dos', NULL),
+(12, '44765283', '2023-10-14', '12989898', NULL, 'prueba 3', NULL),
+(13, '44765283', '2023-10-14', '12989898', NULL, 'prueba 15', NULL),
+(14, '44765283', '2023-10-14', '12989898', NULL, 'prueba 16', NULL),
+(15, '44765283', '2023-10-14', '12989898', NULL, 'prueba 12', NULL),
+(16, '44765283', '2023-10-14', '12989898', NULL, 'prueba 114', NULL),
+(17, '44765283', '2023-10-14', '12989898', NULL, 'prueba 20', NULL),
+(18, '44765283', '2023-10-14', '12989898', NULL, 'sdadsadsa', NULL),
+(19, '44765283', '2023-10-14', '12321', NULL, 'prueba definitiva', NULL);
 
 -- --------------------------------------------------------
 
@@ -125,6 +161,15 @@ CREATE TABLE `usuarios` (
   `nombreYapellido` varchar(60) DEFAULT NULL,
   `rol` enum('A','C','T') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`idusuario`, `usuario`, `contra`, `nombreYapellido`, `rol`) VALUES
+(1, 'admin', 'admin', 'Lucas Quaroni', 'A'),
+(2, 'chofer', 'chofer', 'Marcelo Benitez', 'C'),
+(3, 'tecnico', 'tecnico', 'Mateo Bodini', 'T');
 
 --
 -- Índices para tablas volcadas
@@ -194,7 +239,7 @@ ALTER TABLE `fletes`
 -- AUTO_INCREMENT de la tabla `reclamos`
 --
 ALTER TABLE `reclamos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de la tabla `servicios`
@@ -206,7 +251,7 @@ ALTER TABLE `servicios`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas

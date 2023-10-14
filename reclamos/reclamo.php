@@ -18,20 +18,30 @@
         <div class="logo">
             <a href="../index.html"><img src="../resources/logo-fornax-png.png" /></a>
         </div>
-        <nav class="menu">
-            <div class="nav-links">
-                <a href="../login/login.php">USUARIO INTERNO</a>
-            </div>
-        </nav>
     </div>
     <div class="container">
         <h2>Registro de Reclamo</h2>
         <form method="post" action="procesar_reclamo.php">
             <div class="linea">
                 <p>Número de DNI<span> *</span></p>
-                <input type="text" name="dni_cliente" required />
+                <input type="text" name="dni_cliente" readonly value="<?php echo $_GET['dni']; ?>" required />
             </div>
-            <!-- Agrega más campos para el registro del reclamo -->
+            <div class="linea">
+                <p>Modelo de artefacto<span> *</span></p>
+                <input type="text" name="modelo" required />
+            </div>
+            <div class="linea">
+                <p>Numero de serie<span> *</span></p>
+                <input type="text" name="serial" required />
+            </div>
+            <div class="linea">
+                <p>¿Está en garantía?</p>
+                <input type="checkbox" name="garantia" />
+            </div>
+            <div class="linea">
+                <p>Problema que presenta el producto<span> *</span></p>
+                <textarea name="desc" required></textarea>
+            </div>
             <button type="submit" name="submit">Enviar Reclamo</button>
         </form>
     </div>

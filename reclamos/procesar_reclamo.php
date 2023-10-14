@@ -19,17 +19,51 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["dni_cliente"])) {
     // Asegúrate de verificar y validar los datos del formulario y ejecutar las consultas SQL necesarias.
 
     // Por ejemplo:
-    $modelo_artefacto = $_POST["modelo_artefacto"];
-    $numero_serie = $_POST["numero_serie"];
-    $en_garantia = isset($_POST["en_garantia"]) ? 1 : 0;
-    $problema_producto = $_POST["problema_producto"];
+    $modelo_artefacto = $_POST["modelo"];
+    $numero_serie = $_POST["serial"];
+    $en_garantia = isset($_POST["garantia"]) ? 1 : 0;
+    $problema_producto = $_POST["desc"];
 
-    // Inserta los datos del reclamo en la base de datos (reemplaza con tu consulta SQL)
-    $sql = "INSERT INTO reclamos (dni, modelo_artefacto, numero_serie, en_garantia, problema_producto) VALUES ('$dni_cliente', '$modelo_artefacto', '$numero_serie', $en_garantia, '$problema_producto')";
+    // Verificar si el artefacto ya existe en la base de datos
+    $sql_select_artefacto = "SELECT serial FROM artefactos WHERE serial = '$numero_serie'";
+    $result = $conn->query($sql_select_artefacto);
 
-    if ($conn->query($sql) === TRUE) {
-        // El reclamo se registró con éxito
-        echo "Reclamo registrado con éxito. Gracias.";
+    if ($result->num_rows > 0) {
+        // El artefacto ya existe, asignar el id del artefacto al reclamo
+        $row = $result->fetch_assoc();
+        $id_artefacto = $row["id"];
+    } else {
+        // El artefacto no existe, insertarlo en la base de datos
+        $sql_insert_artefacto = "INSERT INTO artefactos (serial) VALUES ('$numero_serie')";
+        if ($conn->query($sql_insert_artefacto) === TRUE) {
+            // Obtener el id del artefacto recién insertado
+            $id_artefacto = $conn->insert_id;
+        } else {
+            echo "Error al insertar el artefacto: " . $conn->error;
+            exit;
+        }
+    }
+
+    // Obtener la fecha actual
+    $fecha_reclamo = date("Y-m-d H:i:s");
+
+    // Insertar los datos del reclamo en la tabla de reclamos
+    $sql_insert_reclamo = "INSERT INTO reclamos (dni, fecha, serial, idadmin, descripcion, idestado)
+                          VALUES ('$dni_cliente', '$fecha_reclamo', '$numero_serie', NULL, '$problema_producto', NULL)";
+
+    if ($conn->query($sql_insert_reclamo) === TRUE) {
+        // Los datos del reclamo se han registrado con éxito en la base de datos
+        // Configurar las variables de sesión
+        session_start();
+        $_SESSION['dni_cliente'] = $dni_cliente;
+        $_SESSION['modelo_artefacto'] = $modelo_artefacto;
+        $_SESSION['numero_serie'] = $numero_serie;
+        $_SESSION['en_garantia'] = $en_garantia;
+        $_SESSION['problema_producto'] = $problema_producto;
+
+        // Redirigir a la página de reclamo exitoso
+        header("Location: reclamo_exitoso.php");
+        exit;
     } else {
         echo "Error al registrar el reclamo: " . $conn->error;
     }
