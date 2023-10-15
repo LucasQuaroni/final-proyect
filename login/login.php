@@ -21,7 +21,7 @@
     </div>
     <nav class="menu">
       <div class="nav-links">
-        <a href="../reclamos/reclamo.php">Volver</a>
+        <a href="../index.html">Volver</a>
       </div>
     </nav>
   </div>
