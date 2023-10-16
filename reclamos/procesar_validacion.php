@@ -23,21 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["dni_cliente"])) {
         // El cliente ya está registrado, redirige a la página de reclamos
         header("Location: reclamo.php?dni=$dni_cliente");
     } else {
-        // El cliente no está registrado, muestra un formulario para registrarlos
-        // Puedes agregar campos adicionales para el registro aquí
-        echo '<h2>Registro del Cliente</h2>';
-        echo '<form method="post" action="procesar_registro_cliente.php">';
-        echo '<div class="linea">';
-        echo '<p>Nombre<span> *</span></p>';
-        echo '<input type="text" name="nombre" required />';
-        echo '</div>';
-        echo '<div class="linea">';
-        echo '<p>Apellido<span> *</span></p>';
-        echo '<input type="text" name="apellido" required />';
-        echo '</div>';
-        echo '<input type="hidden" name="dni_cliente" value="' . $dni_cliente . '" />';
-        echo '<button type="submit" name="submit">Registrar Cliente</button>';
-        echo '</form>';
+        // El cliente no está registrado, redirige a la página de registro de cliente
+        header("Location: registro_cliente.php?dni=$dni_cliente");
     }
 }
 

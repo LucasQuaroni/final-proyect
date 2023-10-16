@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 }
 
 // Verifica si el formulario se envió y si se proporcionó el DNI
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["dni_cliente"])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && (isset($_POST["dni_cliente"]) || isset($_POST["dni-nuevo"]))) {
     $dni_cliente = $_POST["dni_cliente"];
 
     // Aquí puedes procesar los datos del formulario de registro de reclamo
@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["dni_cliente"])) {
         $id_artefacto = $row["id"];
     } else {
         // El artefacto no existe, insertarlo en la base de datos
-        $sql_insert_artefacto = "INSERT INTO artefactos (serial) VALUES ('$numero_serie')";
+        $sql_insert_artefacto = "INSERT INTO artefactos (serial, modelo, garantia) VALUES ('$numero_serie', '$modelo_artefacto', '$en_garantia')";
         if ($conn->query($sql_insert_artefacto) === TRUE) {
             // Obtener el id del artefacto recién insertado
             $id_artefacto = $conn->insert_id;

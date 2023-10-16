@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Servicio de PostVenta - FORNAX S.R.L</title>
-  <link rel="stylesheet" href="login-style.css" />
+  <link rel="stylesheet" href="../estilos.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -28,7 +28,7 @@
   <div class="container">
     <div class="card">
       <h1>Funcionalidades restringidas</h1>
-
+      <br>
       <form name="myForm" class="login" action="autenticarLogin.php" method="POST">
         <div class="linea">
           <p>Usuario</p>
@@ -38,8 +38,9 @@
           <p>Contraseña</p>
           <input type="password" id="pass" name="pass" />
         </div>
-        <input type="submit" value="Enviar" />
+        <button type="submit">Ingresar</button>
       </form>
+      <br>
       <?php
       session_start();
       $error_message = isset($_SESSION['error_message']) ? $_SESSION['error_message'] : "";

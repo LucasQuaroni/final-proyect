@@ -20,38 +20,46 @@
         </div>
     </div>
     <div class="container">
-        <?php
-        if (isset($_GET['dni-nuevo'])) {
-            $dni_cliente = $_GET['dni-nuevo'];
-            echo "El cliente con DNI $dni_cliente ha sido registrado exitosamente.";
-        } else {
-            $dni_cliente = $_GET['dni'];
-            echo "Cliente encontrado. Continúe con su reclamo.";
-        }
-        ?>
-        <h2>Registro de Reclamo</h2>
-        <form method="post" action="procesar_reclamo.php">
+        <p>Cliente no encontrado. Por favor, regístrese.</p>
+        <h2>Registro del cliente</h2>
+        <form method="post" action="procesar_registro_cliente.php">
             <div class="linea">
-                <p>Número de DNI<span> *</span></p>
-                <input type="text" name="dni_cliente" readonly value="<?php echo $dni_cliente; ?>" required />
+                <p>DNI del Cliente<span> *</span></p>
+                <input type="text" name="dni_cliente" readonly value="<?php echo $_GET['dni']; ?>" required />
             </div>
             <div class="linea">
-                <p>Modelo de artefacto<span> *</span></p>
-                <input type="text" name="modelo" required />
+                <p>Nombre y apellido<span> *</span></p>
+                <input type="text" name="nombre" required />
             </div>
             <div class="linea">
-                <p>Numero de serie<span> *</span></p>
-                <input type="text" name="serial" required />
+                <p>Domicilio<span> *</span></p>
+                <input type="text" name="domicilio" required />
             </div>
             <div class="linea">
-                <p>¿Está en garantía?</p>
-                <input type="checkbox" name="garantia" />
+                <p>Teléfono<span> *</span></p>
+                <input type="text" name="telefono" required />
             </div>
             <div class="linea">
-                <p>Problema que presenta el producto<span> *</span></p>
-                <textarea name="desc" required></textarea>
+                <p>Email<span> *</span></p>
+                <input type="email" name="email" required />
             </div>
-            <button type="submit" name="submit">Enviar Reclamo</button>
+            <div class="linea">
+                <p>Provincia<span> *</span></p>
+                <input type="text" name="provincia" required />
+            </div>
+            <div class="linea">
+                <p>Localidad<span> *</span></p>
+                <input type="text" name="localidad" required />
+            </div>
+            <div class="linea">
+                <p>Código Postal<span> *</span></p>
+                <input type="text" name="codigo_postal" required />
+            </div>
+            <div class="linea">
+                <p>Observación del Cliente</p>
+                <textarea name="observacion_cliente"></textarea>
+            </div>
+            <button type="submit" name="submit">Registrar Cliente</button>
         </form>
     </div>
 
