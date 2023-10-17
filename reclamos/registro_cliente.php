@@ -24,7 +24,7 @@
         <h2>Registro del cliente</h2>
         <form method="post" action="procesar_registro_cliente.php">
             <div class="linea">
-                <p>DNI del Cliente<span> *</span></p>
+                <p>DNI del Cliente</p>
                 <input type="text" name="dni_cliente" readonly value="<?php echo $_GET['dni']; ?>" required />
             </div>
             <div class="linea">
