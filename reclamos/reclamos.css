@@ -134,6 +134,7 @@ form {
 
 form p {
   font-size: 20px;
+  width: 40%;
 }
 
 .resumen p {
@@ -146,10 +147,10 @@ form p {
 
 .linea {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 0.1rem;
-  width: 100%;
+  gap: 2rem;
+  width: 120%;
   justify-content: center;
 }
 
