@@ -40,9 +40,9 @@ if (!isset($_SESSION['usuario'])) {
     <p class="desc">Login / Admin</p>
     <div class="dropdown">
       <div class="button-container">
-        <a class="button" href="">RECLAMOS</a>
-        <a class="button" href="">FLETES</a>
-        <a class="button" href="">SERVICIO</a>
+        <a class="button" href="./reclamos/reclamos.php">RECLAMOS</a>
+        <a class="button" href="./fletes/fletes.php">FLETES</a>
+        <a class="button" href="./servicio/servicio.php">SERVICIO</a>
         <a class="button" href="">ESTADISTICAS</a>
       </div>
     </div>
