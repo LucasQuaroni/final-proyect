@@ -37,7 +37,7 @@
             </div>
             <div class="linea">
                 <p>Teléfono<span> *</span></p>
-                <input type="text" name="telefono" required />
+                <input type="number" name="telefono" required />
             </div>
             <div class="linea">
                 <p>Email<span> *</span></p>
@@ -53,7 +53,7 @@
             </div>
             <div class="linea">
                 <p>Código Postal<span> *</span></p>
-                <input type="text" name="codigo_postal" required />
+                <input type="number" name="codigo_postal" required />
             </div>
             <div class="linea">
                 <p>Observación del Cliente</p>

@@ -158,6 +158,24 @@ form p {
   font-size: 20px;
 }
 
+.resumen {
+  width: 30%;
+}
+
+.down {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.down p {
+  width: 40%;
+  margin: 10px 0; /* Ajusta los márgenes superior e inferior según tus preferencias */
+  line-height: 1.4; /* Espaciado entre líneas para mejorar la legibilidad */
+  text-align: center;
+}
+
 .resumen p {
   font-size: 1.3rem;
   display: flex;
@@ -173,6 +191,18 @@ form p {
   gap: 0.1rem;
   width: 100%;
   justify-content: center;
+  font-size: 2rem;
+}
+
+.line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.line b {
+  font-size: 1.5rem;
 }
 
 .item-ft {

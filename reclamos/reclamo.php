@@ -41,7 +41,7 @@
             </div>
             <div class="linea">
                 <p>Numero de serie<span> *</span></p>
-                <input type="text" name="serial" required />
+                <input type="number" name="serial" required />
             </div>
             <div class="linea">
                 <p>¿Está en garantía?</p>

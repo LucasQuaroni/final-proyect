@@ -28,21 +28,36 @@ session_start();
 
     <h1>Reclamo registrado con éxito!</h1>
     <div class="resumen">
-      <p><b>Número de DNI:</b>
-        <?php echo $_SESSION['dni_cliente']; ?>
-      </p>
-      <p><b>Modelo de artefacto:</b>
-        <?php echo $_SESSION['modelo_artefacto']; ?>
-      </p>
-      <p><b>Número de serie:</b>
-        <?php echo $_SESSION['numero_serie']; ?>
-      </p>
-      <p><b>¿Está en garantía?</b>
-        <?php echo ($_SESSION['en_garantia'] ? "Sí" : "No"); ?>
-      </p>
-      <p><b>Problema del producto:</b>
-        <?php echo $_SESSION['problema_producto']; ?>
-      </p>
+      <div class="line">
+        <label for=""><b>Número de DNI:</b></label>
+        <p>
+          <?php echo $_SESSION['dni_cliente']; ?>
+        </p>
+      </div>
+      <div class="line">
+        <label for=""><b>Modelo de artefacto:</b></label>
+        <p>
+          <?php echo $_SESSION['modelo_artefacto']; ?>
+        </p>
+      </div>
+      <div class="line">
+        <label for=""><b>Número de serie:</b></label>
+        <p>
+          <?php echo $_SESSION['numero_serie']; ?>
+        </p>
+      </div>
+      <div class="line">
+        <label for=""><b>¿Está en garantía?</b></label>
+        <p>
+          <?php echo ($_SESSION['en_garantia'] ? "Sí" : "No"); ?>
+        </p>
+      </div>
+      <div class="line">
+        <label for=""><b>Problema del producto:</b></label>
+        <p>
+          <?php echo $_SESSION['problema_producto']; ?>
+        </p>
+      </div>
     </div>
     <a id="volver" href="../index.html">Volver al inicio</a>
   </div>
