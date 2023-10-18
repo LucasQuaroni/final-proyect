@@ -36,7 +36,7 @@
                 <input type="text" name="dni_cliente" readonly value="<?php echo $dni_cliente; ?>" required />
             </div>
             <div class="linea">
-                <p>Modelo de artefacto<span> *</span></p>
+                <p>Modelo de <br>artefacto<span> *</span></p>
                 <input type="text" name="modelo" required />
             </div>
             <div class="linea">
