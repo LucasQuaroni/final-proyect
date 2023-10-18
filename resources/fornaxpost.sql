@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-10-2023 a las 21:54:47
+-- Tiempo de generación: 18-10-2023 a las 04:38:48
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -40,6 +40,7 @@ CREATE TABLE `artefactos` (
 INSERT INTO `artefactos` (`serial`, `modelo`, `garantia`) VALUES
 ('12321', NULL, NULL),
 ('12989898', 'FORNAX FIT 50', 'S'),
+('2123132', 'asd', 'S'),
 ('23132132131', 'FORNAX FIT 50', 'S'),
 ('2313213999', NULL, NULL),
 ('434', 'modelo_artefacto', ''),
@@ -162,7 +163,9 @@ INSERT INTO `reclamos` (`id`, `dni`, `fecha`, `serial`, `idadmin`, `descripcion`
 (35, '1', '2023-10-16', '444422131', NULL, 'se rompio la chaveta', NULL),
 (36, '1', '2023-10-16', '444422131323', NULL, 'se rompio la chaveta', NULL),
 (37, '1', '2023-10-16', '434', NULL, 'a ver si carga bien la cocina', NULL),
-(38, '1', '2023-10-16', '4344', NULL, 'a ver si carga bien la cocina', NULL);
+(38, '1', '2023-10-16', '4344', NULL, 'a ver si carga bien la cocina', NULL),
+(39, '44765283', '2023-10-17', '44442', NULL, 'prueba final antes del marvo', NULL),
+(40, '44765283', '2023-10-18', '2123132', NULL, 'asd', NULL);
 
 -- --------------------------------------------------------
 
@@ -271,7 +274,7 @@ ALTER TABLE `fletes`
 -- AUTO_INCREMENT de la tabla `reclamos`
 --
 ALTER TABLE `reclamos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT de la tabla `servicios`
