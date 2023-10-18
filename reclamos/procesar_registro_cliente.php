@@ -1,11 +1,6 @@
 <?php
-// Conexión a la base de datos (reemplaza con tus propios detalles de conexión)
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "fornaxpost";
 
-$conn = new mysqli($servername, $username, $password, $database);
+$conn = new mysqli("localhost", "root", "", "fornaxpost");
 
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
@@ -29,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["dni_cliente"]) && isse
 
     if ($result_check->num_rows === 0) {
         // El cliente no existe, por lo tanto, procede con el registro
-        // Inserta los datos del cliente en la tabla de clientes (reemplaza con tu consulta SQL)
+        // Inserta los datos del cliente en la tabla de clientes
         $sql_register = "INSERT INTO clientes (dni, nombreYapellido, domicilio, telefono, email, provincia, localidad, codpostal, obs)
                         VALUES ('$dni_cliente', '$nombre', '$domicilio', '$telefono', '$email', '$provincia', '$localidad', '$codigo_postal', '$observacion_cliente')";
 

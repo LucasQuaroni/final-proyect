@@ -1,11 +1,6 @@
 <?php
-// Conexión a la base de datos (reemplaza con tus propios detalles de conexión)
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "fornaxpost";
 
-$conn = new mysqli($servername, $username, $password, $database);
+$conn = new mysqli("localhost", "root", "", "fornaxpost");
 
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);

@@ -1,11 +1,6 @@
 <?php
-// Conexión a la base de datos (reemplaza con tus propios detalles de conexión)
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "fornaxpost";
 
-$conn = new mysqli($servername, $username, $password, $database);
+$conn = new mysqli("localhost", "root", "", "fornaxpost");
 
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
@@ -15,10 +10,6 @@ if ($conn->connect_error) {
 if ($_SERVER["REQUEST_METHOD"] == "POST" && (isset($_POST["dni_cliente"]) || isset($_POST["dni-nuevo"]))) {
     $dni_cliente = $_POST["dni_cliente"];
 
-    // Aquí puedes procesar los datos del formulario de registro de reclamo
-    // Asegúrate de verificar y validar los datos del formulario y ejecutar las consultas SQL necesarias.
-
-    // Por ejemplo:
     $modelo_artefacto = $_POST["modelo"];
     $numero_serie = $_POST["serial"];
     $en_garantia = isset($_POST["garantia"]) ? 1 : 0;
