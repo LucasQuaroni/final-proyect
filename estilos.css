@@ -32,7 +32,7 @@ body {
 }
 
 .logo img:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .title {
@@ -90,13 +90,13 @@ body {
 }
 
 .page-specific {
-  min-height: 100vh; /* Al menos 100vh de altura */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 .page-specific .container {
-  flex-grow: 1; /* Asegura que el contenido empuje el footer hacia abajo */
+  flex-grow: 1;
 }
 
 .page-specific .footer {
@@ -105,7 +105,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative; /* Cambiado de 'absolute' a 'relative' */
+  position: relative;
   bottom: 0;
   left: 0;
 }
@@ -171,8 +171,8 @@ form p {
 
 .down p {
   width: 40%;
-  margin: 10px 0; /* Ajusta los márgenes superior e inferior según tus preferencias */
-  line-height: 1.4; /* Espaciado entre líneas para mejorar la legibilidad */
+  margin: 10px 0;
+  line-height: 1.4;
   text-align: center;
 }
 
@@ -257,9 +257,8 @@ button {
   transition: all 0.1s;
   background-color: lightgray;
 }
-
+ 
 button:hover {
-  transform: scale(1.1);
   background-color: rgb(186, 39, 39);
 }
 
@@ -279,7 +278,6 @@ button:hover {
 }
 
 #volver:hover {
-  transform: scale(1.1);
   background-color: rgb(186, 39, 39);
 }
 
