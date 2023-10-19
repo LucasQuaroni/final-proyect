@@ -1,9 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // Obtén el formulario y el campo de entrada de DNI
   const form = document.querySelector('form');
   const dniInput = document.querySelector('input[name="dni_cliente"]');
 
-  // Agrega un controlador de eventos para el envío del formulario
   form.addEventListener('submit', function (e) {
     // Obtén el valor del campo de entrada de DNI
     const dniValue = dniInput.value.trim();
