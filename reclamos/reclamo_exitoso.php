@@ -49,7 +49,14 @@ session_start();
       <div class="line">
         <label for=""><b>¿Está en garantía?</b></label>
         <p>
-          <?php echo ($_SESSION['en_garantia'] ? "Sí" : "No"); ?>
+          <?php
+          if (($_SESSION['en_garantia'] == "S")) {
+            $garantia = 'Si';
+          } else {
+            $garantia = 'No';
+          }
+          echo $garantia;
+          ?>
         </p>
       </div>
       <div class="line">

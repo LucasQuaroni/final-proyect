@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && (isset($_POST["dni_cliente"]) || iss
 
     $modelo_artefacto = $_POST["modelo"];
     $numero_serie = $_POST["serial"];
-    $en_garantia = isset($_POST["garantia"]) ? 1 : 0;
+    $en_garantia = isset($_POST["garantia"]) ? 'S' : 'N';
     $problema_producto = $_POST["desc"];
 
     // Verificar si el artefacto ya existe en la base de datos
@@ -22,7 +22,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && (isset($_POST["dni_cliente"]) || iss
     if ($result->num_rows > 0) {
         // El artefacto ya existe, asignar el id del artefacto al reclamo
         $row = $result->fetch_assoc();
-        $id_artefacto = $row["id"];
+        $id_artefacto = $row["serial"];
+
+        // Actualiza la garantía del artefacto en la base de datos
+        $sql_update_garantia = "UPDATE artefactos SET garantia = '$en_garantia' WHERE serial = '$id_artefacto'";
+
+        if ($conn->query($sql_update_garantia) === TRUE) {
+            // La garantía del artefacto se ha actualizado con éxito
+        } else {
+            echo "Error al actualizar la garantía del artefacto: " . $conn->error;
+            exit;
+        }
     } else {
         // El artefacto no existe, insertarlo en la base de datos
         $sql_insert_artefacto = "INSERT INTO artefactos (serial, modelo, garantia) VALUES ('$numero_serie', '$modelo_artefacto', '$en_garantia')";
