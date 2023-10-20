@@ -238,6 +238,13 @@ textarea {
   font-size: 16px;
 }
 
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
 input {
   width: 80%;
   height: 2.3rem;
@@ -257,7 +264,7 @@ button {
   transition: all 0.1s;
   background-color: lightgray;
 }
- 
+
 button:hover {
   background-color: rgb(186, 39, 39);
 }
@@ -340,5 +347,11 @@ select {
 
   .nav-links a:hover {
     transform: scale(1.2);
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 }

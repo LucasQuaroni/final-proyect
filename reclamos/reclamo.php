@@ -18,6 +18,11 @@
         <div class="logo">
             <a href="../index.html"><img src="../resources/logo-fornax-png.png" /></a>
         </div>
+        <nav class="menu">
+            <div class="nav-links">
+                <a href="../reclamos/cliente.html">Volver</a>
+            </div>
+        </nav>
     </div>
     <div class="container">
         <?php
