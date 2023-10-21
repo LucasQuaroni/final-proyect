@@ -25,7 +25,7 @@ if (!isset($_SESSION['usuario'])) {
 <body>
   <div class="header">
     <div class="logo">
-      <a href="../index.html"><img src="../resources/logo-fornax-png.png" />
+      <a href="../index.html"><img src=".././resources/logo-fornax-png.png" />
       </a>
     </div>
     <nav class="menu">

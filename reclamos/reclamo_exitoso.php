@@ -1,6 +1,23 @@
 <?php
 // Iniciar la sesión para acceder a los datos del reclamo
 session_start();
+// Verificar si la sesión está iniciada
+if (isset($_SESSION['es_admin']) && $_SESSION['es_admin']) {
+  $usuarioEsAdmin = true;
+} else {
+  $usuarioEsAdmin = false;
+}
+
+function mostrarBoton($esAdmin)
+{
+  if ($esAdmin) {
+    echo '<a id="volver" href="../menu_admin.php">Volver al Menú ADMIN</a>';
+  } else {
+    echo '<a id="volver" href="../index.html">Volver al inicio</a>';
+  }
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -66,7 +83,9 @@ session_start();
         </p>
       </div>
     </div>
-    <a id="volver" href="../index.html">Volver al inicio</a>
+    <?php
+    mostrarBoton($usuarioEsAdmin);
+    ?>
   </div>
 
 </body>

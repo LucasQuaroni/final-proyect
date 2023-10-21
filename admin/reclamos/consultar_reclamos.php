@@ -20,7 +20,7 @@ if ($result->num_rows > 0) {
         echo "<td>" . $row["descripcion"] . "</td>";
         echo "<td><input id='idadmin_" . $row["id"] . "' type='text' value='" . $row["idadmin"] . "'></td>";
         echo "<td><input id='idestado_" . $row["id"] . "' type='text' value='" . $row["idestado"] . "'></td>";
-        echo "<td><button onclick='actualizarReclamo(" . $row["id"] . ")'>Actualizar</button></td>";
+        echo "<td><button class='boton' onclick='actualizarReclamo(" . $row["id"] . ")'>Actualizar</button></td>";
         echo "</tr>";
     }
 } else {
