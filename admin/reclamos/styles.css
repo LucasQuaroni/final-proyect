@@ -305,6 +305,10 @@ select {
   text-align: center; /* Centra el contenido del div */
 }
 
+.search-bar {
+  margin-bottom: 20px; /* Ajusta el valor según la separación deseada */
+}
+
 table {
   width: 100%;
   border-collapse: collapse;

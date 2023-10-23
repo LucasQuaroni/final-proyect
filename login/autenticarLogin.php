@@ -17,6 +17,7 @@ if ($usuario != "" && $contra != "") {
 
         if ($rol == 'A') {
             $_SESSION['usuario'] = $usuario;
+            $_SESSION['es_admin'] = true;
             header("Location: ../admin/admin.php");
             exit;
         } elseif ($rol == 'C') {

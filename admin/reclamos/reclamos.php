@@ -11,7 +11,7 @@
 <body>
     <div class="header">
         <div class="logo">
-            <a href="../index.html">
+            <a href="../../index.html">
                 <img src="logo-fornax-png.png">
             </a>
         </div>
@@ -26,7 +26,10 @@
     </div>
     <div class="table-container">
         <h1>Reclamos</h1>
-
+        <div class="search-bar">
+            <input type="text" id="dniSearch" placeholder="Buscar por DNI">
+            <button class='boton' onclick="buscarReclamosPorDNI()">Buscar</button>
+        </div>
         <table>
             <thead>
                 <tr>
@@ -40,7 +43,7 @@
                     <th></th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id='reclamosTable'>
                 <?php
                 include('consultar_reclamos.php');
                 ?>
@@ -48,6 +51,25 @@
         </table>
     </div>
     <script>
+        function buscarReclamosPorDNI() {
+            const dni = document.getElementById('dniSearch').value.toLowerCase(); // Obtener DNI a buscar
+
+            // Obtener todas las filas de la tabla
+            const filas = document.querySelectorAll('#reclamosTable tr');
+
+            // Iterar sobre las filas y ocultar/mostrar según el DNI
+            filas.forEach(function (fila) {
+                const columnaDNI = fila.cells[1].textContent.toLowerCase(); // Obtener DNI en la fila
+
+                // Si el DNI en la fila contiene el texto buscado, mostrar la fila; de lo contrario, ocultarla.
+                if (columnaDNI.includes(dni)) {
+                    fila.style.display = 'table-row'; // Mostrar la fila
+                } else {
+                    fila.style.display = 'none'; // Ocultar la fila
+                }
+            });
+        }
+
         function actualizarReclamo(idReclamo) {
             // Recopila los valores de ID Admin e ID Estado desde la fila
             const idAdmin = document.getElementById(`idadmin_${idReclamo}`).value;

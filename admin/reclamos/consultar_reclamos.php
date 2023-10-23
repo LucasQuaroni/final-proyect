@@ -7,7 +7,7 @@ if ($conn->connect_error) {
 }
 
 // Realiza una consulta para obtener los reclamos de la base de datos
-$sql = "SELECT * FROM reclamos";
+$sql = "SELECT * FROM reclamos ORDER BY idadmin";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
